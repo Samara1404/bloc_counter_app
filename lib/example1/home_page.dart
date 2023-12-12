@@ -33,16 +33,21 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 119, 129, 225),
+      
       appBar: AppBar(
+        centerTitle: true,
      
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Colors.blue[200],
        
-        title: Text(widget.title),
+        title: Text('Bloc Counter App',style: TextStyle(color: Color.fromARGB(255, 243, 234, 234),fontSize: 26, fontWeight: FontWeight.w600),),
       ),
+
       body: Center(
         
+        
         child: Column(
-          
+        
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
@@ -60,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
               });
             }
             ,
-             child: Text('Go detail'))
+             child: const Text('Go detail'))
           ],
         ),
       ),
@@ -72,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
             tooltip: 'Increment',
             child: const Icon(Icons.remove),
           ),
-          SizedBox(width: 50),
+          const SizedBox(width: 50),
           FloatingActionButton(
             onPressed: _incrementCounter,
             tooltip: 'Increment',

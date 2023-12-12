@@ -1,4 +1,5 @@
 
+import 'package:bloc_counter_app/example2/detail2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -11,10 +12,12 @@ class MyHomePage2 extends StatelessWidget {
     
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
      
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Colors.blue[400],
        
-        title: Text("Bloc Counter App"),
+        title: Text("Bloc Counter App", 
+       style: TextStyle(color: Colors.white70, fontSize: 26, fontWeight: FontWeight.w600), ),
       ),
       body: Center(
         
@@ -30,7 +33,11 @@ class MyHomePage2 extends StatelessWidget {
                style: Theme.of(context).textTheme.headlineMedium,
             );
             }),
-           
+           ElevatedButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (BuildContext contex) => Detail2Page()));
+            }, 
+            child: Text('o detail bloc'))
           ],
         ),
       ),

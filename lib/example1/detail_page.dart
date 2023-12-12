@@ -16,10 +16,25 @@ class _Detail1PageState extends State<DetailPage> {
       centerTitle: true,
       leading: IconButton(onPressed: (){Navigator.pop(context, widget.count);}, 
       icon: const Icon(Icons.arrow_back)),),
-      floatingActionButton: FloatingActionButton(onPressed: (){setState(() {
-        widget.count--;
-      });},
-      child: const Icon(Icons.remove),),
+      body: Center(child:  Text(
+              '${widget.count}',
+              style: const TextStyle(fontSize: 50, color: Colors.blue),
+            ),),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          FloatingActionButton(onPressed: (){setState(() {
+            widget.count--;
+          });},
+          child: const Icon(Icons.remove),),
+          const SizedBox(width: 50),
+          FloatingActionButton(onPressed: (){setState(() {
+            widget.count++;
+          });},
+          child: const Icon(Icons.add),
+          ),
+        ],
+      ),
     );
   }
 }
